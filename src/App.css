@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.opacity_custom {
+  opacity: 0.5;
+  user-select: none;
+  /* color: red; */
+}
+.formValidError {
+  color: red;
+}
+
+.spin_block {
+  width: 70px;
+  height: 70px;
+}
+
+.fetching_loading {
+  opacity: 0.7;
+  font-size: 20px;
+}
