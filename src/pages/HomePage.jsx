@@ -21,7 +21,7 @@ function HomePage() {
     (async function getAllUsers() {
       setDisabledState(true);
 
-      const response = await axios.get("http://localhost:4444/users");
+      const response = await axios.get(process.env.REACT_APP_API_URL + "users");
       setUsers(response.data);
       setDisabledState(false);
     })();
@@ -49,7 +49,7 @@ function HomePage() {
           idsToDel.push(user._id);
         }
       });
-      await axios.delete("http://localhost:4444/users", {
+      await axios.delete(process.env.REACT_APP_API_URL + "users", {
         data: { ids: idsToDel },
       });
       fetchUsers();
@@ -87,7 +87,7 @@ function HomePage() {
         }
       });
 
-      await axios.patch("http://localhost:4444/block", {
+      await axios.patch(process.env.REACT_APP_API_URL + "block", {
         data: { ids: idsToUpdate },
       });
       fetchUsers();
@@ -121,7 +121,7 @@ function HomePage() {
         }
       });
 
-      await axios.patch("http://localhost:4444/unlock", {
+      await axios.patch(process.env.REACT_APP_API_URL + "unlock", {
         data: { ids: idsToUpdate },
       });
       fetchUsers();

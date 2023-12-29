@@ -42,7 +42,7 @@ function SignUp() {
       };
       // console.log(newUser.lastTime);
       const response = await axios.post(
-        "http://localhost:4444/register",
+        process.env.REACT_APP_API_URL + "register",
         newUser
       );
       // console.log(response);

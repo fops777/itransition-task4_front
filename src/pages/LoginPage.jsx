@@ -19,7 +19,7 @@ function Login() {
 
   useEffect(() => {
     (async function getAllUsers() {
-      const response = await axios.get("http://localhost:4444/users");
+      const response = await axios.get(process.env.REACT_APP_API_URL + "users");
       // console.log(response.data);
       setUsers(response.data);
     })();
@@ -52,7 +52,10 @@ function Login() {
         return;
       }
 
-      const response = await axios.post("http://localhost:4444/login", newUser);
+      const response = await axios.post(
+        process.env.REACT_APP_API_URL + "login",
+        newUser
+      );
       setLoggedUserObj(newUser);
       localStorage.setItem("loggedObj", JSON.stringify(newUser));
       navigate("/");

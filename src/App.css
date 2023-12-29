@@ -40,7 +40,6 @@
 .opacity_custom {
   opacity: 0.5;
   user-select: none;
-  /* color: red; */
 }
 .formValidError {
   color: red;
